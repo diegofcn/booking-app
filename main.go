@@ -11,7 +11,7 @@ func main() {
 	fmt.Printf("We have total of %v tickets and %v are still available\n", conferenceTickets, remainingTickets)
 	fmt.Println("Get your tickets here")
 
-	var bookings [50]string
+	var bookings []string
 
 	var firstName string
 	var lastName string
@@ -31,9 +31,9 @@ func main() {
 	fmt.Scan(&userTickets)
 
 	remainingTickets = remainingTickets - userTickets
-	bookings[0] = firstName + " " + lastName
+	bookings = append(bookings, firstName+" "+lastName)
 
-	fmt.Printf("The whole array: %v\n", bookings)
+	fmt.Printf("The whole slice: %v\n", bookings)
 	fmt.Printf("The first value: %v\n", bookings[0])
 	fmt.Printf("Array type: %T\n", bookings)
 	fmt.Printf("Array length: %v\n", bookings)
